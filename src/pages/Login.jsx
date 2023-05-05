@@ -79,7 +79,7 @@ const Login = () => {
           Forgot Password
         </a>
         <button disabled={disable}>{disable ? `${timer}s` : "Log in"}</button>
-        <Link>Sign up</Link>
+        <Link to="/signup">Sign up</Link>
       </form>
     </div>
   );

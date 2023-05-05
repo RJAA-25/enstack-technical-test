@@ -7,8 +7,12 @@
 }
 
 :root {
-  --primary-color: #242424;
-  --secondary-color: #909090;
+  --main-color: #242424;
+  --sub-color: #909090;
+  --secondary-color: #e0e0e0;
+  --success-color: #27ae60;
+  --danger-color: #eb5757;
+  --disable-color: #b3b3b3;
   --background-color: #f2f2f2;
   --inter-font: Inter, Arial, Helvetica, sans-serif;
   --poppins-font: Poppins, Arial, Helvetica, sans-serif;
@@ -20,7 +24,7 @@ html {
 }
 
 body {
-  color: var(--primary-color);
+  color: var(--main-color);
   background-color: var(--background-color);
 }
 
@@ -43,6 +47,20 @@ main {
     width: 80%;
     margin: auto;
   }
+}
+
+/* Components */
+.logo-component {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.logo-divide {
+  flex-grow: 1;
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
 }
 
 /* Boarding */
@@ -90,7 +108,7 @@ main {
   flex-grow: 1;
   margin-top: 1.5rem;
   line-height: 1.5rem;
-  color: var(--secondary-color);
+  color: var(--sub-color);
 }
 
 .boarding-content a {
@@ -102,7 +120,7 @@ main {
   border-style: none;
   box-shadow: 0px 8px 30px rgba(48, 48, 48, 0.3);
   color: white;
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
   text-align: center;
   text-decoration: none;
 }
@@ -173,7 +191,7 @@ main {
   display: grid;
   margin-bottom: 1rem;
   padding: 1rem 1.25rem;
-  border: 1px solid rgba(144, 144, 144, 0.5);
+  border: 1px solid var(--secondary-color);
   border-radius: 4px;
   grid-template: 1.0625rem 1.375rem / 1fr 30px;
   gap: 7px;
@@ -182,12 +200,12 @@ main {
 .login-input-field label {
   font-size: 0.7rem;
   line-height: 1.0625rem;
-  color: var(--secondary-color);
+  color: var(--sub-color);
   cursor: pointer;
 }
 
 .login-input-field input {
-  color: var(--primary-color);
+  color: var(--main-color);
   font-size: 1rem;
   line-height: 1.375rem;
   border: none;
@@ -215,27 +233,105 @@ main {
   border-radius: 8px;
   border-style: none;
   color: white;
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
   cursor: pointer;
 }
 
 .login-form button:disabled {
-  background-color: var(--secondary-color);
+  background-color: var(--disable-color);
   cursor: not-allowed;
 }
 
-/* Components */
-.logo-component {
-  margin: 1.5rem 0;
-  display: flex;
-  align-items: center;
-  gap: 21px;
+/* Sign Up */
+.signup-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
 }
 
-.logo-divide {
-  flex-grow: 1;
-  border: 1px solid #bdbdbd;
-  border-radius: 2px;
+.signup-container h1 {
+  font-family: var(--poppins-font);
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 120%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  padding: 2.5rem 1.25rem;
+  box-shadow: 0px 8px 40px rgba(138, 149, 158, 0.2);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.signup-input-group {
+  width: 100%;
+}
+
+.signup-input-field {
+  width: 100%;
+  display: grid;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  grid-template: 1.0625rem 1.375rem / 1fr 30px;
+  gap: 7px;
+}
+
+.signup-input-field label {
+  font-size: 0.7rem;
+  line-height: 1.0625rem;
+  color: var(--sub-color);
+  cursor: pointer;
+}
+
+.signup-input-field input {
+  color: var(--main-color);
+  font-size: 1rem;
+  line-height: 1.375rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.signup-input-field div {
+  grid-area: 1 / 2 / 3 / 3;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.signup-form button {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border-style: none;
+  color: white;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+.signup-form p {
+  font-size: 0.875rem;
+  color: var(--sub-color);
+}
+
+.signup-form a {
+  font-size: 0.875rem;
+  color: #303030;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 /* Status */
@@ -245,4 +341,8 @@ main {
 
 .hide {
   opacity: 0.5;
+}
+
+.invalid {
+  border-color: var(--danger-color);
 }
