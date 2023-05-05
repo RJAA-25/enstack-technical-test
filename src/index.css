@@ -35,6 +35,10 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+  /* html {
+    font-size: 18px;
+  } */
+
   main {
     width: 80%;
     margin: auto;
@@ -52,7 +56,6 @@ main {
 .boarding-img {
   width: 100%;
   height: 100%;
-  /* border: 1px solid blue; */
   overflow: hidden;
 }
 
@@ -68,7 +71,6 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* border: 1px solid yellow; */
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -92,7 +94,6 @@ main {
 }
 
 .boarding-content a {
-  display: block;
   font-size: 1.125rem;
   line-height: 1.5625rem;
   padding: 0.9375rem;
@@ -127,4 +128,121 @@ main {
   .boarding-content p {
     max-width: 100%;
   }
+}
+
+/* Log In */
+.login-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.login-container span,
+.login-container h1 {
+  display: block;
+  font-family: var(--poppins-font);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 120%;
+  text-align: center;
+}
+
+.login-container h1 {
+  text-transform: uppercase;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  padding: 2.5rem 1.25rem;
+  box-shadow: 0px 8px 40px rgba(138, 149, 158, 0.2);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-input-group {
+  width: 100%;
+}
+
+.login-input-field {
+  width: 100%;
+  display: grid;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(144, 144, 144, 0.5);
+  border-radius: 4px;
+  grid-template: 1.0625rem 1.375rem / 1fr 30px;
+  gap: 7px;
+}
+
+.login-input-field label {
+  font-size: 0.7rem;
+  line-height: 1.0625rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.login-input-field input {
+  color: var(--primary-color);
+  font-size: 1rem;
+  line-height: 1.375rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-input-field div {
+  grid-area: 1 / 2 / 3 / 3;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.login-form a {
+  color: #303030;
+  text-decoration: none;
+}
+
+.login-form button {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border-style: none;
+  color: white;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.login-form button:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+}
+
+/* Components */
+.logo-component {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.logo-divide {
+  flex-grow: 1;
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
+}
+
+/* Status */
+.active {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0.5;
 }

@@ -13,12 +13,14 @@ import Login from "./pages/Login";
 
 import "./reset.css";
 import "./index.css";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<Boarding />} />
       <Route path="login" element={<Login />} />
+      <Route path="home" element={<Home />} />
     </Route>
   )
 );
