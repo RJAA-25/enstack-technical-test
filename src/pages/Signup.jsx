@@ -29,18 +29,25 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Check name not empty
     const nameValid = account.name.value.trim();
     nameValid
       ? setAttribute("name", "error", false)
       : setAttribute("name", "error", true);
     const emailValid = validEmail.test(account.email.value);
+
+    // Check email format is valid
     emailValid
       ? setAttribute("email", "error", false)
       : setAttribute("email", "error", true);
     const passwordValid = validPassword.test(account.password.value);
+
+    // Check password format is valid
     passwordValid
       ? setAttribute("password", "error", false)
       : setAttribute("password", "error", true);
+
+    // Check confirm is not empty and same as password
     const confirmValid =
       account.confirm.value.trim() &&
       account.confirm.value === account.password.value;
@@ -103,7 +110,7 @@ const Signup = () => {
             <ReactSVG
               src={eye}
               onClick={() => setTogglePW((state) => !state)}
-              className={togglePW ? "active" : "hide"}
+              className={`password-${togglePW ? "show" : "hide"}`}
             />
           </div>
           <div
@@ -121,7 +128,7 @@ const Signup = () => {
             <ReactSVG
               src={eye}
               onClick={() => setToggleCPW((state) => !state)}
-              className={toggleCPW ? "active" : "hide"}
+              className={`password-${toggleCPW ? "show" : "hide"}`}
             />
           </div>
         </div>

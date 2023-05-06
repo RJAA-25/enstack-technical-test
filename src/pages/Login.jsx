@@ -19,10 +19,13 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Works only if email format is valid
     if (validEmail.test(email)) {
       if (password === PASSWORD) {
         navigate("/home");
       } else {
+        // Disables button on 3rd wrong attempt
         if (failCount >= 2) {
           setDisable((state) => !state);
           const interval = setInterval(() => {
@@ -71,7 +74,7 @@ const Login = () => {
             <ReactSVG
               src={eye}
               onClick={() => setToggle((state) => !state)}
-              className={toggle ? "active" : "hide"}
+              className={`password-${toggle ? "show" : "hide"}`}
             />
           </div>
         </div>

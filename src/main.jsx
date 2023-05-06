@@ -13,9 +13,11 @@ import "./index.css";
 import Root from "./pages/Root";
 import Boarding from "./pages/Boarding";
 import Login from "./pages/Login";
-
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
+import Cart from "./pages/Cart";
+import Layout from "./layout/Layout";
+import Favorite from "./pages/Favorite";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,7 +25,11 @@ const router = createBrowserRouter(
       <Route index element={<Boarding />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
-      <Route path="home" element={<Home />} />
+      <Route element={<Layout />}>
+        <Route path="home" element={<Home />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="favorite" element={<Favorite />} />
+      </Route>
     </Route>
   )
 );
