@@ -18,6 +18,8 @@ import Signup from "./pages/Signup";
 import Cart from "./pages/Cart";
 import Layout from "./layout/Layout";
 import Favorite from "./pages/Favorite";
+import { ClientProvider } from "./context/client";
+import Product from "./pages/Product";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +31,7 @@ const router = createBrowserRouter(
         <Route path="home" element={<Home />} />
         <Route path="cart" element={<Cart />} />
         <Route path="favorite" element={<Favorite />} />
+        <Route path="/products/:productId" element={<Product />} />
       </Route>
     </Route>
   )
@@ -36,6 +39,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ClientProvider>
+      <RouterProvider router={router} />
+    </ClientProvider>
   </React.StrictMode>
 );

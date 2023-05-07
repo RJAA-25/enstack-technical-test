@@ -1,9 +1,14 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { clientContext } from "../context/client";
 import { ReactSVG } from "react-svg";
 import search from "/src/assets/svg/search.svg";
-import cart from "/src/assets/svg/cart.svg";
-import { Link } from "react-router-dom";
+import basket from "/src/assets/svg/basket.svg";
 
 const Header = () => {
+  const { cart } = useContext(clientContext);
+  const totalItems = cart.reduce((a, b) => a + b.quantity, 0);
+
   return (
     <div className="header-component">
       <ReactSVG src={search} />
@@ -12,7 +17,8 @@ const Header = () => {
         <span>Beautiful</span>
       </div>
       <Link to="/cart">
-        <ReactSVG src={cart} />
+        <span>{totalItems}</span>
+        <ReactSVG src={basket} />
       </Link>
     </div>
   );

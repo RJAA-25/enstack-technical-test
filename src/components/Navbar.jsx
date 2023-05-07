@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ReactSVG } from "react-svg";
 import { data } from "../data/sections";
 
 const Navbar = () => {
-  const [section, setSection] = useState("home");
+  const { pathname } = useLocation();
+  const [section, setSection] = useState(pathname.slice(1));
 
   return (
     <nav className="navbar-component">

@@ -1,21 +1,31 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactSVG } from "react-svg";
+import { clientContext } from "../context/client";
+import { priceFormat } from "../helper";
+import { data } from "../data/products";
 import Categories from "../components/Categories";
 import Header from "../components/Header";
-import { data } from "../data/products";
-import { priceFormat } from "../helper";
 import bag from "/src/assets/svg/bag.svg";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [category, setCategory] = useState("popular");
   const [products, setProducts] = useState([]);
+
+  const { products: data, cart, toggleCart } = useContext(clientContext);
+
+  const toggleBasket = (item) => {
+    return cart.find((obj) => obj.product_id === item.product_id);
+  };
 
   useEffect(() => {
     let items;
     if (category === "popular") {
-      items = data.filter((obj) => obj.rating >= 4);
+      items = [...data].filter((obj) => obj.rating >= 4);
     } else {
-      items = data.filter((obj) => obj.type === category);
+      items = [...data].filter((obj) => obj.type === category);
     }
     items.sort((a, b) => {
       // Sort by priority
@@ -37,22 +47,24 @@ const Home = () => {
       <Categories category={{ category, setCategory }} />
       <div className="home-products-container">
         {products.map((item) => (
-          <div key={item.name} className="home-product">
+          <div key={item.product_id} className="home-product">
             <div className="home-product-img">
               <img
                 src="https://picsum.photos/500"
                 alt={item.name}
-                onClick={() => alert("Moving to Product Page")}
+                onClick={() => navigate(`/products/${item.product_id}`)}
               />
               <ReactSVG
                 src={bag}
-                className="add-to-cart"
-                onClick={() => alert(`${item.name} has been added to cart`)}
+                className={`add-to-cart ${
+                  toggleBasket(item) ? "cart-toggle" : ""
+                }`}
+                onClick={() => toggleCart(item)}
               />
             </div>
             <div
               className="home-product-details"
-              onClick={() => alert("Moving to Product Page")}
+              onClick={() => navigate(`/products/${item.product_id}`)}
             >
               <span className="home-product-name">{item.name}</span>
               <span className="home-product-price">
