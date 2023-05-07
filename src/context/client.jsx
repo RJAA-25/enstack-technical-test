@@ -85,11 +85,9 @@ export const ClientProvider = (props) => {
 
   const initialState = {
     products,
-
     favorite,
     toggleFavorite,
     addFavoritesToCart,
-
     cart,
     toggleCart,
     addToCart,

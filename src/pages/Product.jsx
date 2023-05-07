@@ -51,11 +51,9 @@ const Product = () => {
       <div className="product-img">
         <img src="https://picsum.photos/1000" alt={productItem.name} />
       </div>
-
-      <button onClick={() => navigate(-1)} className="back">
+      <button onClick={() => navigate(-1)} className="product-back">
         <ReactSVG src={left} />
       </button>
-
       <div className="product-details">
         <h1>{name}</h1>
         <div className="product-price-quantity">
@@ -64,17 +62,17 @@ const Product = () => {
           </span>
           <div className="product-quantity">
             <button
-              disabled={quantity === 0}
-              onClick={() => setQuantity((state) => state - 1)}
-            >
-              <ReactSVG src={minus} />
-            </button>
-            <span>{String(quantity).padStart(2, "0")}</span>
-            <button
               disabled={quantity === stock}
               onClick={() => setQuantity((state) => state + 1)}
             >
               <ReactSVG src={plus} />
+            </button>
+            <span>{String(quantity).padStart(2, "0")}</span>
+            <button
+              disabled={quantity === 0}
+              onClick={() => setQuantity((state) => state - 1)}
+            >
+              <ReactSVG src={minus} />
             </button>
           </div>
         </div>
