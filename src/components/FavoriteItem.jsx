@@ -14,7 +14,11 @@ const FavoriteItem = (props) => {
     <li className="favorite-item">
       <Link to={`/products/${item.product_id}`} className="favorite-link">
         <div className="favorite-img">
-          <img src="https://picsum.photos/1000" />
+          <img
+            // src="https://picsum.photos/1000"
+            src={item.main_image}
+            alt={item.name}
+          />
         </div>
         <div className="favorite-details">
           <span>{item.name}</span>

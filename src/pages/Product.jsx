@@ -49,7 +49,11 @@ const Product = () => {
   return (
     <div className="product-container">
       <div className="product-img">
-        <img src="https://picsum.photos/1000" alt={productItem.name} />
+        <img
+          // src="https://picsum.photos/1000"
+          src={main_image}
+          alt={productItem.name}
+        />
       </div>
       <button onClick={() => navigate(-1)} className="product-back">
         <ReactSVG src={left} />

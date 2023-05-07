@@ -3,12 +3,13 @@ export const data = [
     "type": "chair",
     "name": "Black Simple Lamp",
     "price": 12.0,
-    "main_image": "<url>",
+    "main_image":
+      "https://images.unsplash.com/photo-1571898223382-0aa3499f0f2a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "product_images": ["<url>", "<url>", "<url>"],
     "priority": 1,
     "product_id": "00000001",
     "description":
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolorum, commodi voluptatibus sit nesciunt distinctio quos quidem incidunt suscipit asperiores, neque eos, autem obcaecati! Doloremque culpa reprehenderit veniam aliquid veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolorum, commodi voluptatibus sit nesciunt distinctio quos quidem incidunt suscipit asperiores, neque eos, autem obcaecati! Doloremque culpa reprehenderit veniam aliquid veritatis.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolorum, commodi voluptatibus sit nesciunt distinctio quos quidem incidunt suscipit asperiores, neque eos, autem obcaecati! Doloremque culpa reprehenderit veniam aliquid veritatis.",
     "rating": 4.75,
     "review_count": 50,
     "stock": 5,
@@ -69,7 +70,8 @@ export const data = [
     "type": "table",
     "name": "Black Simple Table",
     "price": 12.61,
-    "main_image": "<url>",
+    "main_image":
+      "https://images.unsplash.com/photo-1532579821608-3f220ab206e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJsYWNrJTIwdGFibGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     "product_images": ["<url>", "<url>", "<url>"],
     "priority": 1,
     "product_id": "00000002",
@@ -83,7 +85,8 @@ export const data = [
     "type": "armchair",
     "name": "Black Simple Armchair",
     "price": 1.61,
-    "main_image": "<url>",
+    "main_image":
+      "https://images.unsplash.com/photo-1489269637500-aa0e75768394?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmxhY2slMjBhcm1jaGFpcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     "product_images": ["<url>", "<url>", "<url>"],
     "priority": 0,
     "product_id": "00000003",
@@ -97,7 +100,8 @@ export const data = [
     "type": "bed",
     "name": "Black Simple Bed",
     "price": 2.61,
-    "main_image": "<url>",
+    "main_image":
+      "https://images.unsplash.com/photo-1572805773780-a02f06ea4798?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YmxhY2slMjBiZWR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     "product_images": ["<url>", "<url>", "<url>"],
     "priority": 10,
     "product_id": "00000004",
@@ -111,7 +115,8 @@ export const data = [
     "type": "chair",
     "name": "White Simple Chair",
     "price": 99.0,
-    "main_image": "<url>",
+    "main_image":
+      "https://images.unsplash.com/photo-1547587091-f883cf8f0c12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8d2hpdGUlMjBjaGFpcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     "product_images": ["<url>", "<url>", "<url>"],
     "priority": 12,
     "product_id": "00000005",
@@ -125,7 +130,8 @@ export const data = [
     "type": "table",
     "name": "White Simple Table",
     "price": 80.0,
-    "main_image": "<url>",
+    "main_image":
+      "https://images.unsplash.com/photo-1595561967457-683be8ad4b13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHdoaXRlJTIwdGFibGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
 
     "product_images": ["<url>", "<url>", "<url>"],
     "priority": 0,
@@ -140,7 +146,8 @@ export const data = [
     "type": "armchair",
     "name": "White Simple Armchair",
     "price": 1000000.5,
-    "main_image": "<url>",
+    "main_image":
+      "https://images.unsplash.com/photo-1518012312832-96aea3c91144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8d2hpdGUlMjBhcm1jaGFpcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
     "product_images": ["<url>", "<url>", "<url>"],
     "priority": 0,
     "product_id": "00000007",

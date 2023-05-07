@@ -15,7 +15,11 @@ const CartItem = (props) => {
   return (
     <li className="cart-item">
       <div className="cart-img">
-        <img src="https://picsum.photos/1000" alt={item.name} />
+        <img
+          // src="https://picsum.photos/1000"
+          src={item.main_image}
+          alt={item.name}
+        />
       </div>
       <div className="cart-details">
         <span>{item.name}</span>

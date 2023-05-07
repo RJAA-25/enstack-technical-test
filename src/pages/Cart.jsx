@@ -10,7 +10,6 @@ import right from "/src/assets/svg/right.svg";
 const Cart = () => {
   const navigate = useNavigate();
   const { cart, checkoutCart } = useContext(clientContext);
-  // const cost = cart.reduce((a, b) => a + b.total, 0);
 
   const [promo, setPromo] = useState("");
   const [totalCost, setTotalCost] = useState(0);
@@ -68,6 +67,7 @@ const Cart = () => {
             setTotalCost(0);
             setDiscount(0);
             setPromo("");
+            navigate("/congrats");
           }}
         >
           Checkout

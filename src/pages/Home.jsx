@@ -50,7 +50,8 @@ const Home = () => {
           <div key={item.product_id} className="home-product">
             <div className="home-product-img">
               <img
-                src="https://picsum.photos/500"
+                // src="https://picsum.photos/1000"
+                src={item.main_image}
                 alt={item.name}
                 onClick={() => navigate(`/products/${item.product_id}`)}
               />

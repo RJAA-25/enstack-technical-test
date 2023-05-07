@@ -33,7 +33,6 @@ main {
   width: 100%;
   height: 100vh;
   min-height: 500px;
-  border: 1px solid blue;
   display: flex;
   align-items: center;
   position: relative;
@@ -155,7 +154,6 @@ main {
   width: 100%;
   height: 4.6875rem;
   background-color: white;
-  border: 1px solid green;
 }
 
 .navbar-list {
@@ -455,7 +453,6 @@ main {
   width: 100%;
   height: 100%;
   padding: 1.5rem;
-  border: 1px solid blue;
   overflow-y: scroll;
 }
 
@@ -795,12 +792,49 @@ main {
   cursor: pointer;
 }
 
+/* Notification */
+.notification-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-container h1 {
+  font-size: 2rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  font-family: var(--poppins-font);
+  color: var(--sub-color);
+}
+
+/* Profile */
+.profile-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.profile-container h1 {
+  font-size: 2rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  font-family: var(--poppins-font);
+  color: var(--sub-color);
+}
+
 /* Cart */
 .cart-container {
   width: 100%;
   height: 100%;
   padding: 1.5rem;
-  border: 1px solid red;
   background-color: var(--background-color);
   overflow-y: scroll;
   z-index: 30;
@@ -970,6 +1004,100 @@ main {
   cursor: pointer;
 }
 
+.congrats-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  font-family: var(--poppins-font);
+  overflow-y: scroll;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.congrats-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.congrats-content h1 {
+  font-size: 2rem;
+  line-height: 120%;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.6875rem;
+}
+
+.congrats-content p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: var(--sub-color);
+  margin-top: 1.5625rem;
+}
+
+.congrats-container button {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: var(--poppins-font);
+  background-color: var(--main-color);
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 8px;
+  border-style: none;
+}
+
+.congrats-container a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  font-family: var(--poppins-font);
+}
+
+/* Error */
+.error-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 1.5rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  overflow-y: scroll;
+}
+
+.error-container h1 {
+  font-size: 5rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  font-family: var(--poppins-font);
+  color: var(--sub-color);
+}
+
+.error-container button {
+  font-family: var(--poppins-font);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  background-color: var(--main-color);
+  border-radius: 8px;
+  border-style: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
 /* Status */
 .password-active {
   opacity: 1;
@@ -988,7 +1116,6 @@ main {
 }
 
 .category-active svg path {
-  /* stroke: white; */
   fill: white;
 }
 
