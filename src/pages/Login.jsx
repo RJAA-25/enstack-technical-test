@@ -5,6 +5,7 @@ import { LOCK, PASSWORD, validEmail } from "../helper";
 import down from "/src/assets/svg/down.svg";
 import eye from "/src/assets/svg/eye.svg";
 import Logo from "../components/Logo";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,14 +20,18 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    toast.dismiss();
     // Works only if email format is valid
     if (validEmail.test(email)) {
       if (password === PASSWORD) {
         navigate("/home");
+        toast.success("Login successful");
       } else {
+        toast.error("Invalid credentials");
         // Disables button on 3rd wrong attempt
         if (failCount >= 2) {
+          toast.dismiss();
+          toast("Try again in one minute");
           setDisable((state) => !state);
           const interval = setInterval(() => {
             setTimer((state) => state - 1);

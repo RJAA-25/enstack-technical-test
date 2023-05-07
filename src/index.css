@@ -492,10 +492,6 @@ main {
   cursor: pointer;
 }
 
-.cart-toggle {
-  background-color: var(--info-color);
-}
-
 .home-product-img img {
   width: 100%;
   height: 100%;
@@ -1004,6 +1000,10 @@ main {
   cursor: pointer;
 }
 
+.cart-checkout:disabled {
+  background-color: var(--sub-color);
+}
+
 .congrats-container {
   width: 100%;
   height: 100%;
@@ -1109,6 +1109,10 @@ main {
 
 .invalid {
   border-color: var(--danger-color);
+}
+
+.cart-toggle {
+  background-color: var(--info-color);
 }
 
 .category-active .category-logo {

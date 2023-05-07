@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 import { ReactSVG } from "react-svg";
 import down from "/src/assets/svg/down.svg";
 import eye from "/src/assets/svg/eye.svg";
@@ -28,7 +29,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    toast.dismiss();
     // Check name not empty
     const nameValid = account.name.value.trim();
     nameValid
@@ -55,8 +56,10 @@ const Signup = () => {
       ? setAttribute("confirm", "error", false)
       : setAttribute("confirm", "error", true);
 
-    if (nameValid && emailValid && passwordValid && confirmValid)
+    if (nameValid && emailValid && passwordValid && confirmValid) {
       navigate("/home");
+      toast.success("Registration successful");
+    } else toast.error("Invalid input detected");
   };
 
   return (

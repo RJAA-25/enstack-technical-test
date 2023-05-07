@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { data } from "../data/products";
-
+import { toast } from "react-hot-toast";
 export const clientContext = createContext({});
 
 export const ClientProvider = (props) => {
@@ -10,32 +10,45 @@ export const ClientProvider = (props) => {
 
   // Favorite
   const toggleFavorite = (item) => {
+    toast.dismiss();
     const target = favorite.find((obj) => obj.product_id === item.product_id);
-    if (!target) setFavorite((state) => [...state, item]);
-    else {
+    if (!target) {
+      setFavorite((state) => [...state, item]);
+      toast.success("Added to favorites");
+    } else {
       // Create clone of favorite items
       const arr = [...favorite];
       const index = arr.indexOf(target);
       // Remove target item
       arr.splice(index, 1);
       setFavorite(arr);
+      toast("Removed from favorites");
     }
   };
 
   const toggleCart = (item) => {
+    toast.dismiss();
     const target = cart.find((obj) => obj.product_id === item.product_id);
-    if (!target) addToCart(item);
-    else removeFromCart(item);
+    if (!target) {
+      addToCart(item);
+      toast.success("Added to cart");
+    } else {
+      removeFromCart(item);
+      toast("Removed from cart");
+    }
   };
 
   const addFavoritesToCart = () => {
+    toast.dismiss();
     favorite.forEach((item) => {
       const target = cart.find((obj) => obj.product_id === item.product_id);
       if (!target) addToCart(item);
     });
+    toast.success("Added favorites to cart");
   };
 
   const addToCart = (item, quantity = 1) => {
+    toast.dismiss();
     const target = cart.find((obj) => obj.product_id === item.product_id);
     if (!target) {
       if (item.stock >= quantity) {
@@ -48,11 +61,13 @@ export const ClientProvider = (props) => {
           quantity,
           total: quantity * item.price,
         };
+        toast.success("Added to cart");
         setCart((state) => [...state, cartItem]);
       }
     } else {
       if (quantity === 0) {
         removeFromCart(item);
+        toast("Removed from cart");
       } else {
         const arr = [...cart];
         const index = arr.indexOf(target);
@@ -60,19 +75,23 @@ export const ClientProvider = (props) => {
         arr[index].quantity = quantity;
         arr[index].total = target.price * quantity;
         setCart(arr);
+        toast.success("Updated cart");
       }
     }
   };
   const removeFromCart = (item) => {
+    toast.dissmiss();
     const target = cart.find((obj) => obj.product_id === item.product_id);
     // Create clone of favorite items
     const arr = [...cart];
     const index = arr.indexOf(target);
     arr.splice(index, 1);
     setCart(arr);
+    toast("Removed from cart");
   };
 
   const checkoutCart = () => {
+    toast.dismiss();
     const arr = [...products];
     cart.forEach((item) => {
       const target = products.find((obj) => obj.product_id === item.product_id);
@@ -81,6 +100,7 @@ export const ClientProvider = (props) => {
     });
     setProducts(arr);
     setCart([]);
+    toast.success("Checkout successful");
   };
 
   const initialState = {

@@ -8,7 +8,8 @@ import bag from "/src/assets/svg/bag.svg";
 
 const FavoriteItem = (props) => {
   const { item } = props;
-  const { toggleFavorite, toggleCart } = useContext(clientContext);
+  const { toggleFavorite, toggleCart, cart } = useContext(clientContext);
+  const cartItem = cart.find((obj) => obj.product_id === item.product_id);
 
   return (
     <li className="favorite-item">
@@ -29,7 +30,10 @@ const FavoriteItem = (props) => {
         <button onClick={() => toggleFavorite(item)}>
           <ReactSVG src={remove} />
         </button>
-        <button onClick={() => toggleCart(item)}>
+        <button
+          className={`${cartItem ? ".cart-toggle" : ""}`}
+          onClick={() => toggleCart(item)}
+        >
           <ReactSVG src={bag} />
         </button>
       </div>

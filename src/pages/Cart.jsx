@@ -61,6 +61,7 @@ const Cart = () => {
           </span>
         </div>
         <button
+          disabled={cart.length < 1}
           className="cart-checkout"
           onClick={() => {
             checkoutCart();

@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { ClientProvider } from "./context/client";
+import { Toaster } from "react-hot-toast";
 
 import "./reset.css";
 import "./index.css";
@@ -47,6 +48,7 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ClientProvider>
+      <Toaster position="top-center" reverseOrder={true} />
       <RouterProvider router={router} />
     </ClientProvider>
   </React.StrictMode>
