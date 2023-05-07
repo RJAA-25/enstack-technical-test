@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import boarding from "/src/assets/images/boarding.jpg";
 
 const Boarding = () => {
   return (
     <div className="boarding-container">
       <div className="boarding-img">
-        <img src="/src/assets/images/boarding.jpg" alt="Boarding" />
+        <img src={boarding} alt="Boarding" />
       </div>
       <div className="boarding-content">
         <h1>
