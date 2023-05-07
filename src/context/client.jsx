@@ -31,19 +31,17 @@ export const ClientProvider = (props) => {
     const target = cart.find((obj) => obj.product_id === item.product_id);
     if (!target) {
       addToCart(item);
-      toast.success("Added to cart");
     } else {
       removeFromCart(item);
-      toast("Removed from cart");
     }
   };
 
   const addFavoritesToCart = () => {
-    toast.dismiss();
     favorite.forEach((item) => {
       const target = cart.find((obj) => obj.product_id === item.product_id);
       if (!target) addToCart(item);
     });
+    toast.dismiss();
     toast.success("Added favorites to cart");
   };
 
@@ -67,7 +65,6 @@ export const ClientProvider = (props) => {
     } else {
       if (quantity === 0) {
         removeFromCart(item);
-        toast("Removed from cart");
       } else {
         const arr = [...cart];
         const index = arr.indexOf(target);
@@ -80,7 +77,7 @@ export const ClientProvider = (props) => {
     }
   };
   const removeFromCart = (item) => {
-    toast.dissmiss();
+    toast.dismiss();
     const target = cart.find((obj) => obj.product_id === item.product_id);
     // Create clone of favorite items
     const arr = [...cart];
@@ -91,7 +88,6 @@ export const ClientProvider = (props) => {
   };
 
   const checkoutCart = () => {
-    toast.dismiss();
     const arr = [...products];
     cart.forEach((item) => {
       const target = products.find((obj) => obj.product_id === item.product_id);

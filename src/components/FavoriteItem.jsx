@@ -31,7 +31,7 @@ const FavoriteItem = (props) => {
           <ReactSVG src={remove} />
         </button>
         <button
-          className={`${cartItem ? ".cart-toggle" : ""}`}
+          // className={`${cartItem ? ".cart-toggle" : ""}`}
           onClick={() => toggleCart(item)}
         >
           <ReactSVG src={bag} />
